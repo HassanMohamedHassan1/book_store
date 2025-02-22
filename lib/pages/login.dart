@@ -1,5 +1,4 @@
 import 'package:book_store/core/Colors.dart';
-import 'package:book_store/core/globals.dart';
 import 'package:book_store/pages/ForgotPassword.dart';
 import 'package:book_store/pages/register.dart';
 import 'package:book_store/widgets/input_field.dart';
@@ -7,15 +6,11 @@ import 'package:book_store/widgets/nav_button.dart';
 import 'package:book_store/widgets/nav_text_button.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   var formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,23 +46,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     HintText: 'Enter your email',
                     errorText: 'Please enter a valid email',
                     keyboardType: TextInputType.emailAddress,
+                    IsPassword: false,
                   ),
                   SizedBox(height: 20.0),
                   InputField(
                     HintText: 'Enter your password',
                     errorText: 'Please enter a valid password',
                     keyboardType: TextInputType.visiblePassword,
-                    obscureText: Attributes.isobscure,
-                    Icontype: IconButton(
-                      icon: Attributes.isobscure
-                          ? Icon(Icons.visibility_off)
-                          : Icon(Icons.visibility),
-                      onPressed: () {
-                        setState(() {
-                          Attributes.isobscure = !Attributes.isobscure;
-                        });
-                      },
-                    ),
+                    IsPassword: true ,
                   ),
                   SizedBox(height: 10.0),
                   Row(

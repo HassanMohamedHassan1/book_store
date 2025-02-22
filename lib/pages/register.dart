@@ -1,20 +1,15 @@
 import 'package:book_store/core/Colors.dart';
-import 'package:book_store/core/globals.dart';
 import 'package:book_store/pages/login.dart';
 import 'package:book_store/widgets/input_field.dart';
 import 'package:book_store/widgets/nav_button.dart';
 import 'package:book_store/widgets/nav_text_button.dart';
 import 'package:flutter/material.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  RegisterScreen({super.key});
 
-  @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
-}
-
-class _RegisterScreenState extends State<RegisterScreen> {
   var formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,47 +43,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   errorText: 'Please enter a valid username',
                   HintText: 'Username',
                   keyboardType: TextInputType.text,
-                  obscureText: Attributes.isobscure,
+                  IsPassword: false,
                 ),
                 const SizedBox(height: 20.0),
-                const InputField(
+                InputField(
                   errorText: 'Please enter a valid email',
                   HintText: 'Email',
                   keyboardType: TextInputType.emailAddress,
+                  IsPassword: false,
                 ),
                 const SizedBox(height: 20.0),
                 InputField(
                   errorText: 'Please enter a valid password',
                   HintText: 'Password',
-                  obscureText: Attributes.isobscure,
                   keyboardType: TextInputType.visiblePassword,
-                  Icontype: IconButton(
-                    icon: Attributes.isobscure
-                        ? Icon(Icons.visibility_off)
-                        : Icon(Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        Attributes.isobscure = !Attributes.isobscure;
-                      });
-                    },
-                  ),
+                  IsPassword: true,
                 ),
                 const SizedBox(height: 20.0),
                 InputField(
                   errorText: 'Please enter The same password',
                   HintText: 'Confirm Password',
-                  obscureText: Attributes.isobscure,
                   keyboardType: TextInputType.visiblePassword,
-                  Icontype: IconButton(
-                    icon: Attributes.isobscure
-                        ? Icon(Icons.visibility_off)
-                        : Icon(Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        Attributes.isobscure = !Attributes.isobscure;
-                      });
-                    },
-                  ),
+                  IsPassword: true,
                 ),
                 const SizedBox(height: 20.0),
                 NavButton(
@@ -99,8 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => LoginScreen()));
-                    } 
-                      
+                    }
                   },
                   Textcolor: AppColors.whiteColor,
                   backgroundColor: AppColors.primaryColor,

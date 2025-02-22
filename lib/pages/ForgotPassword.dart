@@ -40,7 +40,7 @@ class Forgotpassword extends StatelessWidget {
                 InputField(
                   HintText: 'Send code',
                   errorText: 'Please enter a valid code',
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.number, IsPassword: false,
                 ),
                 SizedBox(height: 20.0),
                 NavButton(
