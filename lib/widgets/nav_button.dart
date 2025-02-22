@@ -9,7 +9,8 @@ class NavButton extends StatelessWidget {
   final String text;
   final Function() onPressed;
   final Color Textcolor; 
-  final Color backgroundColor; 
+  final Color backgroundColor;
+
 
 
   @override

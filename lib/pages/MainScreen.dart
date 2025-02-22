@@ -10,6 +10,7 @@ class Mainscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Expanded(
         child: Container(
           padding: const EdgeInsets.all(20.0),
@@ -57,10 +58,8 @@ class Mainscreen extends StatelessWidget {
               NavButton(
                 text: 'Login',
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LoginScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 Textcolor: AppColors.whiteColor,
                 backgroundColor: AppColors.primaryColor,
