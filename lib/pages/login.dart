@@ -1,6 +1,5 @@
 import 'package:book_store/core/Colors.dart';
 import 'package:book_store/pages/ForgotPassword.dart';
-import 'package:book_store/pages/MainScreen.dart';
 import 'package:book_store/pages/register.dart';
 import 'package:book_store/widgets/input_field.dart';
 import 'package:book_store/widgets/nav_button.dart';
@@ -56,10 +55,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   NavTextButton(
                     ButtonText: 'Forgot Password?',
                     onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Forgotpassword()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Forgotpassword(),
+                        ),
+                      );
+                      
                     },
                     Textcolor: AppColors.secondaryColor,
                   ),
@@ -110,6 +112,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontWeight: FontWeight.w400,
                         fontFamily: 'DMSerifDisplay',
                       )),
+                  NavTextButton(
+                    ButtonText: 'Register Now',
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterScreen(),
+                        ),
+                      );
+                    },
+                    Textcolor: AppColors.primaryColor,
+                  ),
                 ],
               ),
             ],

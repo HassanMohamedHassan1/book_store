@@ -2,6 +2,7 @@ import 'package:book_store/core/Colors.dart';
 import 'package:book_store/pages/login.dart';
 import 'package:book_store/widgets/input_field.dart';
 import 'package:book_store/widgets/nav_button.dart';
+import 'package:book_store/widgets/nav_text_button.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -63,6 +64,31 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
                 Textcolor: AppColors.whiteColor,
                 backgroundColor: AppColors.primaryColor,
+              ),
+              SizedBox(height: 200.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Already have an account?',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: AppColors.blackColor,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'DMSerifDisplay',
+                      )),
+                  NavTextButton(
+                    ButtonText: 'Login Now',
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
+                    Textcolor: AppColors.primaryColor,
+                  ),
+                ],
               ),
           ],
         ),

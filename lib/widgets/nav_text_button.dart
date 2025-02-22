@@ -13,7 +13,7 @@ class NavTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: onPressed(),
+      onPressed: onPressed,
       child: Text(
         ButtonText,
         style: TextStyle(
