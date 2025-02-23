@@ -25,7 +25,7 @@ class _InputFieldState extends State<InputField> {
   Widget build(BuildContext context) {
     return TextFormField(
         keyboardType: widget.keyboardType,
-        obscureText: isobscure,
+        obscureText: widget.IsPassword ? isobscure : false,
         validator: (value) {
           if (value!.isEmpty) {
             return widget.errorText;
